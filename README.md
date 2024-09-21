@@ -1,4 +1,4 @@
-### Todo List Application
+# Todo List Application
 
 ## Key Features:
 - Add Tasks: Users can input a task in the text field, and upon submission, the task is added to the list of todos.
@@ -11,7 +11,7 @@
 - useState: A hook to manage the state of the task list. This handles adding and removing tasks dynamically, ensuring the UI re-renders efficiently as the list updates.
 - useRef: This hook is utilized to implement the drag-and-drop feature for each task. useRef holds the reference to DOM elements and is ideal for handling dragging logic without causing unnecessary re-renders.
 
-### Future Improvements:
+## Future Improvements:
 - Add persistent task storage using local storage or a backend database.
 - Add task prioritization or categorization.
 - Enhance the drag-and-drop feature to reorder tasks.
