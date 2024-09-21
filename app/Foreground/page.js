@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react'
 import { IoIosAddCircle } from "react-icons/io";
 import Link from 'next/link'
-import MoreCards from '@/Listcards/page';
+import MoreCards from '@/app/Listcards/page';
 import { motion } from "framer-motion"
 
 
