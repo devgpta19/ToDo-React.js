@@ -35,10 +35,10 @@ function Foreground() {
         <div className='w-full h-screen '>
             <div ref={inputRef} className='fixed p-5 top-0 left-0 z-[2] w-full h-full '>
                 <div>
-                    <div className=' overflow-hidden mt-5 z-[3] flex justify-center'>
+                    <div className='relative overflow-hidden mt-5 z-[3] flex justify-center'>
                         <form onSubmit={submitHandler}>
                             <div className='rounded-[20px] flex gap-5'>
-                                <input type="text" placeholder='Enter your task' value={task} onChange={fun} className='placeholder:text-sky-900 p-2 bg-slate-400/60 rounded w-80 flex justify-center text-center text-zinc-950' />
+                                <input type="text" placeholder='Enter your task' value={task} onChange={fun} className='placeholder:text-sky-900 p-2 bg-slate-400/60 rounded w-52 flex justify-center text-center text-zinc-950'/>
                                 <button className='bg-sky-600 text-slate-100 px-5 py-2 rounded-2xl'>ADD</button>
                             </div>
                         </form>
