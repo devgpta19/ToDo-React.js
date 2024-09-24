@@ -7,14 +7,15 @@ import { motion } from "framer-motion"
 
 
 
-const getLocalItems = () =>{
-    let list = localStorage.getItem('todo-list')
-
-    if(list){
-        return JSON.parse(list);
-    }
-    else{
-        return []
+const getLocalItems = () => {
+    if (typeof window !== "undefined") {
+        let list = localStorage.getItem('todo-list')
+        if (list) {
+            return JSON.parse(list);
+        }
+        else {
+            return []
+        }
     }
 }
 
@@ -45,11 +46,13 @@ function Foreground() {
 
 
     useEffect(() => {
-      return () => {
-        localStorage.setItem('todo-list',JSON.stringify(maintask))
-      }
+        if (typeof window !== "undefined") {
+            let list = localStorage.getItem('todo-list')
+            return () => {
+                localStorage.setItem('todo-list', JSON.stringify(maintask))
+            }
+        }
     }, [maintask])
-    
     console.log(maintask);
 
 
@@ -60,7 +63,7 @@ function Foreground() {
                     <div className='relative overflow-hidden mt-5 z-[3] flex justify-center'>
                         <form onSubmit={submitHandler}>
                             <div className='rounded-[20px] flex gap-5'>
-                                <input type="text" placeholder='Enter your task' value={task} onChange={fun} className='placeholder:text-sky-900 p-2 bg-slate-300 rounded w-52 flex justify-center text-center text-zinc-950'/>
+                                <input type="text" placeholder='Enter your task' value={task} onChange={fun} className='placeholder:text-sky-900 p-2 bg-slate-300 rounded w-52 flex justify-center text-center text-zinc-950' />
                                 <button className='bg-sky-600 text-slate-100 px-5 py-2 rounded-2xl'>ADD</button>
                             </div>
                         </form>
