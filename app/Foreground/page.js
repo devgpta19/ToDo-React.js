@@ -7,17 +7,20 @@ import { motion } from "framer-motion"
 
 
 
-const getLocalItems = () => {
-    if (typeof window !== "undefined") {
-        let list = localStorage.getItem('todo-list')
-        if (list) {
-            return JSON.parse(list);
-        }
-        else {
-            return []
-        }
-    }
-}
+// const getLocalItems = () => {
+//     if (typeof window !== "undefined") {
+//         let list = localStorage.getItem('todo-list')
+//         if (list) {
+//             if(JSON.parse(list).length==0){
+                
+//             }
+//             return JSON.parse(list);
+//         }
+//         else {
+//             return []
+//         }
+//     }
+// }
 
 
 function Foreground() {
@@ -25,7 +28,7 @@ function Foreground() {
     const inputRef = useRef(null);
 
     const [task, setTask] = useState("")
-    const [maintask, setMaintask] = useState(getLocalItems());
+    const [maintask, setMaintask] = useState([]);
 
     const fun = (e) => {
         setTask(e.target.value)
@@ -45,15 +48,15 @@ function Foreground() {
     ))
 
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            let list = localStorage.getItem('todo-list')
-            return () => {
-                localStorage.setItem('todo-list', JSON.stringify(maintask))
-            }
-        }
-    }, [maintask])
-    console.log(maintask);
+    // useEffect(() => {
+    //     if (typeof window !== "undefined") {
+    //         let list = localStorage.getItem('todo-list')
+    //         return () => {
+    //             localStorage.setItem('todo-list', JSON.stringify(maintask))
+    //         }
+    //     }
+    // }, [maintask])
+    // console.log(maintask);
 
 
     return (
